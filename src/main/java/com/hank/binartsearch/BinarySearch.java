@@ -2,6 +2,8 @@ package com.hank.binartsearch;
 
 /**
  *二分查找
+ * Arrays.sorts
+ * 可用于排好序的数组
  */
 public class BinarySearch {
     static int rank1(int[] arr,int key){
