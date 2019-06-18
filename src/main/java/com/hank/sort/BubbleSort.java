@@ -1,4 +1,4 @@
-package com.hank.bubblesort;
+package com.hank.sort;
 
 /**
  *

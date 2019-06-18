@@ -1,4 +1,4 @@
-package com.hank.selectionsort;
+package com.hank.sort;
 
 public class SelectionSort {
     /*

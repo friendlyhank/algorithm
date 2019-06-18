@@ -1,4 +1,4 @@
-package com.hank.insertionsort;
+package com.hank.sort;
 
 public class InsertionSort {
     /*

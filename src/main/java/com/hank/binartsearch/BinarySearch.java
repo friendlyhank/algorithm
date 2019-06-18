@@ -1,8 +1,9 @@
 package com.hank.binartsearch;
 
+/**
+ *二分查找
+ */
 public class BinarySearch {
-
-    //最普通的二分搜索法
     static int rank1(int[] arr,int key){
         //区间[L,R]
         int L=0,R=arr.length-1;
