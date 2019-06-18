@@ -3,29 +3,21 @@ package com.hank.binartsearch;
 public class BinarySearch {
 
     //最普通的二分搜索法
-    static int bs1(int[] arr,int key){
-        //在[L,R]返回内寻找key
-        int L = 0,R =arr.length - 1;
+    static int rank1(int[] arr,int key){
+        //区间[L,R]
+        int L=0,R=arr.length-1;
         int mid;
-        //限定返回内查找
         while(L <= R){
-            //mid = R/2;这个是错误的，应该是区间值/2差值+L的位移量
-            mid = L + (R-L) /2;
-            if(arr[mid]==key){
-                return mid;
-            }else if(arr[mid]>key){//在右半部分
-                //key 在 [L,mid-1]内
-                R = mid-1;
-            }else{
-                //在[mid+1,R]内
-                L=mid+1;
-            }
+            mid = L + (R-L)/2;
+            if (key < arr[mid]) R=mid-1;
+            else if (key > arr[mid]) L=mid+1;
+            else return mid;
         }
         return -1;
     }
 
     //和上面的完全一样，只是一开始R不是arr.length-1 而是arr.length
-    static int bs2(int[] arr,int key){
+    static int rank2(int[] arr,int key){
         //区间[L,R]
         int L=0,R=arr.length;
         int mid;
@@ -33,7 +25,7 @@ public class BinarySearch {
             mid = L + (R - L)/2;
             if(arr[mid]==key){
                 return mid;
-            }else if(arr[key] > key){
+            } if(arr[key] > key){
                 R = mid;
             }else{
                 L = mid +1;
@@ -143,9 +135,9 @@ public class BinarySearch {
     public static void main(String[] args) {
         int[] arr = {1,3,4,6,6,6,6,6,6,8,9};
         System.out.println("----------general-----------");
-        System.out.println(bs1(arr,6));
-        System.out.println(bs2(arr,3));
-        System.out.println(bs2(arr,6));
+        System.out.println(rank1(arr,6));
+        System.out.println(rank2(arr,3));
+        System.out.println(rank2(arr,6));
 
         //第一次出现的值
         System.out.println("----------first-----------");
