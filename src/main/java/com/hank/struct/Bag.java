@@ -1,3 +1,5 @@
+package com.hank.struct;
+
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -81,10 +83,9 @@ public class Bag<Item> implements Iterable<Item> {
 
     public static void main(String[] args) {
         Bag<String> bag = new Bag<String>();
-        bag.add("first");
-        bag.add("second");
-        bag.add("third");
-        bag.add("fourth");
+        bag.add("tom");
+        bag.add("lily");
+        bag.add("lucy");
 
         System.out.println("size of bag ="+bag.size());
         //implements Iterable<Item>所以可以直接遍历
