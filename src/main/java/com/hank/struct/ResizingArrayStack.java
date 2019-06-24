@@ -3,6 +3,11 @@ package com.hank.struct;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+/**
+ * 集合类数据类型的实现-Stack
+ * *缺点:会调整数组的大小，且会遍历复制数组
+ * @param <Item>
+ */
 public class ResizingArrayStack<Item> implements Iterable<Item>{
     private Item[] a;//array of ietms
     private int n;//number of elements on stack

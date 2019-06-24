@@ -5,6 +5,7 @@ import java.util.NoSuchElementException;
 
 /**
  * 集合类数据类型的实现-Bag
+ * 缺点:会调整数组的大小，且会遍历复制数组，
  * @param <Item>
  */
 public class ResizingArrayBag<Item> implements Iterable<Item> {
