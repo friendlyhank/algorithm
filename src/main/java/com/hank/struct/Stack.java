@@ -3,6 +3,11 @@ package com.hank.struct;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+/**
+*可迭代的集合类型 Stack
+*后进先出栈
+* 例如退后功能
+ */
 public class Stack<Item> implements Iterable<Item>{
     private Node<Item> first;
     private int n;

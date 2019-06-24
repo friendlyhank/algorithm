@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
+ * 可迭代的集合类型 Queue
  * 先进先出得队列
  * @param <Item>
  */

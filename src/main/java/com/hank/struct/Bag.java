@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
+ * 可迭代的集合类型 Bag
  * 背包是一种不支持从中删除元素得集合数据类型
  * 目的：收集元素并迭代遍历所有收集到的元素
  * 泛型和迭代器得使用
