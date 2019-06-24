@@ -1,7 +1,10 @@
 package com.hank.struct;
 
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
 /**
- * 集合类数据类型的实现
+ * 集合类数据类型的实现-Bag
  * @param <Item>
  */
 public class ResizingArrayBag<Item> implements Iterable<Item> {
@@ -58,7 +61,36 @@ public class ResizingArrayBag<Item> implements Iterable<Item> {
         a[n++] = item;//add item
     }
 
+    public Iterator<Item> iterator(){
+        return new ArrayIterator();
+    }
+
+    private class ArrayIterator implements Iterator<Item>{
+        private int i=0;
+
+        @Override
+        public boolean hasNext(){return i<n;}
+
+        @Override
+        public void remove(){ throw new UnsupportedOperationException();  }
+
+        public Item next(){
+            if (!hasNext()) throw new NoSuchElementException();
+            return a[i++];
+        }
+    }
+
     public static void main(String[] args) {
+
         ResizingArrayBag<String> bag = new ResizingArrayBag<String>();
+        bag.add("Hello");
+        bag.add("World");
+        bag.add("how");
+        bag.add("are");
+        bag.add("you");
+
+        for(String s : bag){
+            System.out.println(s);
+        }
     }
 }
