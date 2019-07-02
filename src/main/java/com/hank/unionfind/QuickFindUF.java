@@ -96,4 +96,5 @@ public class QuickFindUF {
  *
  * 缺点：无法处理大型问题
  * 需要扫描整个数组
+ * 平方级别
  */

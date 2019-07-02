@@ -28,6 +28,7 @@ public class UF {
      * @return
      */
     public int find(int p){
+        //查找根结点
         while (p != parent[p]){
             parent[p] = parent[parent[p]];//path compression by halving
             p =parent[p];
@@ -48,10 +49,6 @@ public class UF {
         int rootQ = find(q);
         if(rootP==rootQ)return;
 
-        System.out.println("rootP："+rootP);
-        System.out.println("rootQ："+rootQ);
-
-        //
         if      (rank[rootP] < rank[rootQ]) parent[rootP] = rootQ;
         else if (rank[rootP] > rank[rootQ]) parent[rootQ] = rootP;
         else{
@@ -59,14 +56,6 @@ public class UF {
             rank[rootP]++;
         }
         count--;
-
-        for(int i=0;i<parent.length;i++){
-            System.out.println("parent"+parent[i]);
-        }
-
-        for(int i=0;i<rank.length;i++){
-            System.out.println("rank"+rank[i]);
-        }
     }
 
     /**
@@ -74,17 +63,12 @@ public class UF {
      * @param p
      */
     private void validate(int p){
-        //这个是变化的吗？
         int n=parent.length;
         if(p < 0 || p >=n){
             throw new IllegalArgumentException("index "+p+"is now between 0 and "+ (n-1));
         }
     }
 
-    /**
-     *
-     *
-     */
     public static void main(String[] args) {
         int n=10;
         UF uf = new UF(n);
